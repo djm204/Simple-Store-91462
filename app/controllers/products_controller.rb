@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-  end
+  end # Loads: app/views/products/show.html.erb
 
   def new
-  end
+  end # Loads: app/views/products/new.html.erb
 
   def create
   end
