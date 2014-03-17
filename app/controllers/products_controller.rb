@@ -21,16 +21,23 @@ class ProductsController < ApplicationController
     else
       render :new
     end
-  end
+  end # We either redirect or render the new view.
 
   def edit
-  end
+    @product = Product.find(params[:id])
+  end # Lodas: app/views/products/edit.html.erb
 
   def update
-  end
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      redirect_to @product
+    else
+      render :edit
+    end
+  end # We either redirect or render the edit view.
 
   def destroy
-  end
+  end # We always redirect to the root after we have deleted.
   
 private
   def product_params
