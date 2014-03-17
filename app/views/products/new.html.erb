@@ -1,6 +1,14 @@
 <h1>New Product</h1>
 
 <%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+    <p>There were <%= pluralize @product.errors.count, 'error' %> that prevented your product from being added.</p>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <div>
     <%= f.label :title %>
     <br>
