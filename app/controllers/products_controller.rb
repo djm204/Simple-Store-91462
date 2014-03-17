@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   # This view will have access to the @products variable.
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def new

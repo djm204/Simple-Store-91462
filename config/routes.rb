@@ -1,6 +1,7 @@
 SimpleStore91462::Application.routes.draw do
   
-  get 'products', to: 'products#index', as: 'products'
+  get 'products',     to: 'products#index', as: 'products'
+  get 'products/:id', to: 'products#show',  as: 'product'
   
   root 'products#index'
   # This root command does the following:
