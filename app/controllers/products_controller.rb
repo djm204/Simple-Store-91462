@@ -37,6 +37,9 @@ class ProductsController < ApplicationController
   end # We either redirect or render the edit view.
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to root_path
   end # We always redirect to the root after we have deleted.
   
 private
